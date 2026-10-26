@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>TiendaBolsos.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TiendaBolsos.Shared\TiendaBolsos.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Modules\Inventory\DTOs\" />
+    <Folder Include="Modules\Inventory\Interfaces\" />
+    <Folder Include="Modules\Inventory\Models\" />
+    <Folder Include="Modules\Inventory\Services\" />
+    <Folder Include="Modules\Inventory\Validators\" />
+    <Folder Include="Modules\Sales\DTOs\" />
+    <Folder Include="Modules\Sales\Interfaces\" />
+    <Folder Include="Modules\Sales\Models\" />
+    <Folder Include="Modules\Sales\Services\" />
+    <Folder Include="Modules\Sales\Validators\" />
+    <Folder Include="Modules\Purchases\DTOs\" />
+    <Folder Include="Modules\Purchases\Interfaces\" />
+    <Folder Include="Modules\Purchases\Models\" />
+    <Folder Include="Modules\Purchases\Services\" />
+    <Folder Include="Modules\Purchases\Validators\" />
+    <Folder Include="Modules\Customers\DTOs\" />
+    <Folder Include="Modules\Customers\Interfaces\" />
+    <Folder Include="Modules\Customers\Models\" />
+    <Folder Include="Modules\Customers\Services\" />
+    <Folder Include="Modules\Customers\Validators\" />
+    <Folder Include="Modules\Suppliers\DTOs\" />
+    <Folder Include="Modules\Suppliers\Interfaces\" />
+    <Folder Include="Modules\Suppliers\Models\" />
+    <Folder Include="Modules\Suppliers\Services\" />
+    <Folder Include="Modules\Suppliers\Validators\" />
+    <Folder Include="Modules\Reports\DTOs\" />
+    <Folder Include="Modules\Reports\Interfaces\" />
+    <Folder Include="Modules\Reports\Models\" />
+    <Folder Include="Modules\Reports\Services\" />
+    <Folder Include="Modules\Reports\Validators\" />
+    <Folder Include="Modules\Audit\DTOs\" />
+    <Folder Include="Modules\Audit\Interfaces\" />
+    <Folder Include="Modules\Audit\Models\" />
+    <Folder Include="Modules\Audit\Services\" />
+    <Folder Include="Modules\Audit\Validators\" />
+    <Folder Include="Modules\Products\DTOs\" />
+    <Folder Include="Modules\Products\Validators\" />
+    <Folder Include="Modules\Auth\Validators\" />
+  </ItemGroup>
+
+</Project>

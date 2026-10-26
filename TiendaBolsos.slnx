@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="TiendaBolsos.API/TiendaBolsos.API.csproj" />
+  <Project Path="TiendaBolsos.Core/TiendaBolsos.Core.csproj" />
+  <Project Path="TiendaBolsos.Infrastructure/TiendaBolsos.Infrastructure.csproj" />
+  <Project Path="TiendaBolsos.Shared/TiendaBolsos.Shared.csproj" />
+  <Project Path="TiendaBolsos.Analytics.ETL/TiendaBolsos.Analytics.ETL.csproj" />
+  <Project Path="TiendaBolsos.Dashboard/TiendaBolsos.Dashboard.csproj" />
+</Solution>

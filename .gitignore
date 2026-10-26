@@ -1,0 +1,43 @@
+## .NET Core / Visual Studio .gitignore
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+[Bb]uild/
+
+# Visual Studio files
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.pidb
+*.dbmdl
+*.opendb
+*.VC.db
+*.opensdf
+
+# NuGet packages
+*.nupkg
+packages/
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+# ASP.NET Debug / Trace
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cache
+*.lock.json
+
+# Environment and local settings
+.env
+.env.local
+*.env
+.vscode/
+.idea/

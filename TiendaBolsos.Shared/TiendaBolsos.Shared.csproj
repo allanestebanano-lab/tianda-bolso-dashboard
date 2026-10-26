@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>TiendaBolsos.Shared</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Responses\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Constants\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.26" />
+  </ItemGroup>
+
+</Project>
