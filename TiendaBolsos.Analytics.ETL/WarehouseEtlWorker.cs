@@ -7,17 +7,17 @@ namespace TiendaBolsos.Analytics.ETL;
 public sealed class WarehouseEtlWorker : BackgroundService
 {
     private readonly IConfiguration _configuration;
-    private readonly IMongoCollection<BsonDocument> _telemetry;
+    private readonly IMongoCollection<BsonDocument>? _telemetry;
     private readonly ILogger<WarehouseEtlWorker> _logger;
     private readonly TimeSpan _interval;
 
     public WarehouseEtlWorker(
         IConfiguration configuration,
-        IMongoCollection<BsonDocument> telemetry,
+        IServiceProvider services,
         ILogger<WarehouseEtlWorker> logger)
     {
         _configuration = configuration;
-        _telemetry = telemetry;
+        _telemetry = services.GetService<IMongoCollection<BsonDocument>>();
         _logger = logger;
         _interval = TimeSpan.FromMinutes(
             configuration.GetValue<int?>("Etl:IntervalMinutes") ?? 5);
@@ -67,7 +67,15 @@ public sealed class WarehouseEtlWorker : BackgroundService
         await LoadProductsAsync(operationalConnection, warehouse, cancellationToken);
         await LoadSalesAsync(operationalConnection, warehouse, cancellationToken);
         await LoadInventorySnapshotAsync(operationalConnection, warehouse, cancellationToken);
-        await LoadTelemetryAsync(warehouse, cancellationToken);
+        if (_telemetry is null)
+        {
+            _logger.LogWarning(
+                "MongoDB telemetry was skipped. Set Mongo:ConnectionString to load technical KPIs.");
+        }
+        else
+        {
+            await LoadTelemetryAsync(warehouse, cancellationToken);
+        }
 
         _logger.LogInformation("Data Warehouse ETL batch completed at {CompletedAtUtc}.",
             DateTime.UtcNow);

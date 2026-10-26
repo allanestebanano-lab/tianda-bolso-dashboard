@@ -57,9 +57,9 @@ else
         <section id="business" class="kpi-section">
             <h2>Indicadores del negocio</h2>
             <div class="kpi-grid">
-                <KpiCard Label="Ventas acumuladas" Value="@_business.TotalSales.ToString("C")" Icon="↗" />
+                <KpiCard Label="Ventas acumuladas" Value="@_business.TotalSales.ToString("N2")" Icon="↗" />
                 <KpiCard Label="Pedidos" Value="@_business.TotalOrders.ToString("N0")" Icon="▤" />
-                <KpiCard Label="Ticket promedio" Value="@_business.AverageOrderValue.ToString("C")" Icon="◉" />
+                <KpiCard Label="Ticket promedio" Value="@_business.AverageOrderValue.ToString("N2")" Icon="◉" />
                 <KpiCard Label="Unidades vendidas" Value="@_business.UnitsSold.ToString("N0")" Icon="□" />
                 <KpiCard Label="Productos con stock bajo" Value="@_business.LowStockProducts.ToString("N0")" Icon="!" />
             </div>
@@ -88,7 +88,7 @@ else
                     <div class="bar-chart" aria-label="Ventas de los últimos siete días">
                         @foreach (var day in _business.DailySales)
                         {
-                            <div class="bar-column" title="@day.Amount.ToString("C")">
+                            <div class="bar-column" title="@day.Amount.ToString("N2")">
                                 <span class="bar-value">@day.Amount.ToString("N0")</span>
                                 <div class="bar business-bar" style="height:@($"{Math.Max(4m, day.Amount / maxSales * 100m):N0}%")"></div>
                                 <span class="bar-label">@day.Date.ToString("dd MMM")</span>

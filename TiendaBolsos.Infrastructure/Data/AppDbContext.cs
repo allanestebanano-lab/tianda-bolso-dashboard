@@ -342,11 +342,11 @@ namespace TiendaBolsos.Infrastructure.Data
         public override async Task<int> SaveChangesAsync(
             CancellationToken cancellationToken = default)
         {
-            await AuditChangesAsync();
+            AuditChanges();
             return await base.SaveChangesAsync(cancellationToken);
         }
 
-        private async Task AuditChangesAsync()
+        private void AuditChanges()
         {
             var entries = ChangeTracker.Entries()
                 .Where(e => e.Entity is Product && (e.State == EntityState.Added || e.State == EntityState.Modified || e.State == EntityState.Deleted))
